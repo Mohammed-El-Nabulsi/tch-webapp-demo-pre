@@ -5,6 +5,7 @@ import 'semantic-ui-css/components/dropdown.js'
 import 'semantic-ui-css/components/transition.js'
 import 'semantic-ui-css/components/visibility.js'
 import 'semantic-ui-css/components/accordion.js'
+import 'react-highlight/node_modules/highlight.js/styles/tomorrow.css';
 
 import './layout.css';
 
