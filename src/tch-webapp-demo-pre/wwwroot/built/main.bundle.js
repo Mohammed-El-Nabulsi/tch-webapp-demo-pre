@@ -86010,8 +86010,6 @@
 			value: function render() {
 				var articleOverviews = [];
 	
-				console.log(this.state);
-	
 				var i = 0;
 				var _iteratorNormalCompletion = true;
 				var _didIteratorError = false;
@@ -101386,7 +101384,7 @@
 	
 				return React.createElement(
 					_reactRouter.Link,
-					{ to: this.to, className: 'item article transition hidden' },
+					{ to: this.to, className: 'item article transition' },
 					React.createElement(
 						'div',
 						{ className: 'image' },

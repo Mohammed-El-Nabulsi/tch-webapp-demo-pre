@@ -28,8 +28,6 @@ export default class Content extends React.Component {
 	render() {
 		var articleOverviews = [];
 
-		console.log(this.state);
-
 		var i = 0;
 		for (const article of this.state.articles) {
 			i++;

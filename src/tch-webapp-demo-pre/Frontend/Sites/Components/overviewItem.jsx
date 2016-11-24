@@ -18,7 +18,7 @@ export default class OverviewItem extends React.Component {
 		}
 
 		return (
-			<Link to={this.to} className="item article transition hidden">
+			<Link to={this.to} className="item article transition">
 				<div className="image">
 					<img className="" src={this.titleImg}></img>
 				</div>
