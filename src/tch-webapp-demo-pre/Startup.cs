@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace tch_webapp_demo_pre
+namespace WebAppDemo
 {
     public class Startup
     {
@@ -24,7 +24,7 @@ namespace tch_webapp_demo_pre
         {
             loggerFactory.AddConsole();
             app.UseDeveloperExceptionPage();
-			
+
             if (env.IsDevelopment())
             {
             }

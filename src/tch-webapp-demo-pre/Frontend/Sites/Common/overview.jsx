@@ -8,26 +8,39 @@ let images = {
 }
 
 export default class Content extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			articles: [],
+		}
+	}
+
+	componentWillMount() {
+		fetch('/api/articles').then(async res => {
+			this.setState({ articles: await res.json() });
+		})
+	}
+
 	componentDidMount () {
 		$('.article').transition({ animation: 'fade up', duration: 400, interval: 200 });
 	}
 
 	render() {
+		var articleOverviews = [];
+
+		console.log(this.state);
+
+		var i = 0;
+		for (const article of this.state.articles) {
+			i++;
+			articleOverviews.push(<OverviewItem key={i} to={article.to} title={article.title} titleImg={images.first} date={moment().add(-2, 'days')}>{article.teaser}</OverviewItem>)
+		}
+
 		return (
 			<div>
 				<div className="ui text container">
 					<div className="ui divided relaxed link items">
-						<OverviewItem to="/articles/1" title="Semantic-Org/Semantic-UI" titleImg={images.first} date={moment().add(-2, 'days')}>
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</OverviewItem>
-
-						<OverviewItem to="/articles/1" title="Semantic-Org/Semantic-UI" titleImg={images.first} date={moment().add(-2, 'days')}>
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</OverviewItem>
+						{articleOverviews}
 					</div>
 				</div>
 			</div>

@@ -47,7 +47,7 @@ OverviewItem.propTypes = {
 	children: React.PropTypes.string.isRequired,
 
 	title: React.PropTypes.string.isRequired,
-	titleImg: React.PropTypes.object.isRequired,
+	// titleImg: React.PropTypes.object.isRequired,
 	to: React.PropTypes.string.isRequired,
 	date: React.PropTypes.instanceOf(moment),
 }
