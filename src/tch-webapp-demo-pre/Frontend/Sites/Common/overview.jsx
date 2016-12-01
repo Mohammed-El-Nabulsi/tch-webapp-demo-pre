@@ -38,7 +38,12 @@ export default class Content extends React.Component {
 			<div>
 				<div className="ui text container">
 					<div className="ui divided relaxed link items">
-						{articleOverviews}
+						<video id="vid1" className="azuremediaplayer amp-default-skin" autoplay controls width="640" height="400" poster="poster.jpg" data-setup='{"techOrder": ["azureHtml5JS", "flashSS", "html5FairPlayHLS","silverlightSS", "html5"], "nativeControlsForTouch": false}'>
+						    <source src="http://pocaccount.streaming.mediaservices.windows.net/11d59137-fe76-4f8e-acbf-4ba4849f4de8/Stundenplaner App Präsentation.ism/manifest" type="application/vnd.ms-sstr+xml" />
+						    <p className="amp-no-js">
+						        To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
+						    </p>
+						</video>
 					</div>
 				</div>
 			</div>

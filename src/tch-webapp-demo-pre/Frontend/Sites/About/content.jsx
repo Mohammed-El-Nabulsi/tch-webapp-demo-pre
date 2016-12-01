@@ -45,8 +45,7 @@ export default class About extends React.Component {
 															</h3>
 															<div className="meta">Project Manager, Process Team<br />Microsoft Studentpartner</div><br />
 															<p>Getting into a software development company early in age, I've been able to collect lots of valuable information regarding professional development and project management.<br /><br />
-																 For the past few years I've been climbing the carreer ladder for that I now feel the urge to spread my thoughts, some tips and pitfalls regarding both management and software engineering.
-																 </p>
+														    </p>
 														</div>
 												</div>
 										</div>

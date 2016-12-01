@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "webpack-once": "webpack --config ./webpack.config.js --progress --colors",
     "webpack": "webpack --config ./webpack.config.js --progress --colors -d --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

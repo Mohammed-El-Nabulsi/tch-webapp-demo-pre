@@ -12,8 +12,6 @@ module.exports = {
         publicPath: '/built/',
     },
 
-    watch: true,
-
     module: {
         loaders: [{
                 test: /\.jsx?$/,

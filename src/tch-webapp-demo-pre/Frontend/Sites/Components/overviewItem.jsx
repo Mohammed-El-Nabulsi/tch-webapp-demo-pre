@@ -29,7 +29,6 @@ export default class OverviewItem extends React.Component {
 					</div>
 
 					<div className="extra">
-
 						<span className="left floated">
 							{moment(this.date).fromNow()}
 						</span>
