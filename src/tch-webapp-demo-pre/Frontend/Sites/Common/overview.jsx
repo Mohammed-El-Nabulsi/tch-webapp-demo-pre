@@ -23,6 +23,12 @@ export default class Content extends React.Component {
 
 	componentDidMount () {
 		$('.article').transition({ animation: 'fade up', duration: 400, interval: 200 });
+
+		const myPlayer = amp('vid1', {}, function() {
+			this.addEventListener('play', function() {
+				this.currentTime(60);
+			});
+		});
 	}
 
 	render() {
