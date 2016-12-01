@@ -84223,7 +84223,7 @@
 /* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, $) {'use strict';
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -84254,6 +84254,8 @@
 	var images = {
 		first: __webpack_require__(680)
 	};
+
+	var myPlayer = null;
 
 	var Content = function (_React$Component) {
 		_inherits(Content, _React$Component);
@@ -84308,49 +84310,31 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				$('.article').transition({ animation: 'fade up', duration: 400, interval: 200 });
+				if (!!myPlayer) {
+					myPlayer.dispose();
+				}
 
-				var myPlayer = amp('vid1', {}, function () {
+				myPlayer = amp('vid1', {
+					nativeControlsForTouch: false,
+					autoplay: false,
+					controls: true,
+					width: "640",
+					height: "400",
+					poster: ""
+				}, function () {
 					this.addEventListener('play', function () {
 						this.currentTime(60);
 					});
 				});
+
+				myPlayer.src([{
+					src: "http://pocaccount.streaming.mediaservices.windows.net/11d59137-fe76-4f8e-acbf-4ba4849f4de8/Stundenplaner App Präsentation.ism/manifest",
+					type: "application/vnd.ms-sstr+xml"
+				}]);
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				var articleOverviews = [];
-
-				var i = 0;
-				var _iteratorNormalCompletion = true;
-				var _didIteratorError = false;
-				var _iteratorError = undefined;
-
-				try {
-					for (var _iterator = this.state.articles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						var article = _step.value;
-
-						i++;
-						articleOverviews.push(React.createElement(
-							_overviewItem2.default,
-							{ key: i, to: article.to, title: article.title, titleImg: images.first, date: (0, _moment2.default)().add(-2, 'days') },
-							article.teaser
-						));
-					}
-				} catch (err) {
-					_didIteratorError = true;
-					_iteratorError = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion && _iterator.return) {
-							_iterator.return();
-						}
-					} finally {
-						if (_didIteratorError) {
-							throw _iteratorError;
-						}
-					}
-				}
 
 				return React.createElement(
 					'div',
@@ -84363,8 +84347,7 @@
 							{ className: 'ui divided relaxed link items' },
 							React.createElement(
 								'video',
-								{ id: 'vid1', className: 'azuremediaplayer amp-default-skin', autoplay: true, controls: true, width: '640', height: '400', poster: 'poster.jpg', 'data-setup': '{"techOrder": ["azureHtml5JS", "flashSS", "html5FairPlayHLS","silverlightSS", "html5"], "nativeControlsForTouch": false}' },
-								React.createElement('source', { src: 'http://pocaccount.streaming.mediaservices.windows.net/11d59137-fe76-4f8e-acbf-4ba4849f4de8/Stundenplaner App Pr\xE4sentation.ism/manifest', type: 'application/vnd.ms-sstr+xml' }),
+								{ id: 'vid1', className: 'azuremediaplayer amp-default-skin' },
 								React.createElement(
 									'p',
 									{ className: 'amp-no-js' },
@@ -84381,7 +84364,7 @@
 	}(React.Component);
 
 	exports.default = Content;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(193), __webpack_require__(413)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(193)))
 
 /***/ },
 /* 565 */
